@@ -10,7 +10,7 @@ setwd("C:/FCD/BigDataRAzure/Cap02")
 getwd()
 
 # Exercício 1 - Pesquise pela função que permite listar todos os arquivo no diretório de trabalho
-?ls
+list.files()
 
 # Exercício 2 - Crie um dataframe a partir de 3 vetores: um de caracteres, um lógico e um de números
 vec1 <- c("a","b","c")
@@ -25,14 +25,22 @@ df
 vec1 <- c(12, 3, 4, 19, 34)
 vec1
 
-func<-function(vec1){
-  if (vec1> 10)
-    print(vec1)
+
+for (i in 1:length(vec1)){
+  if (vec1[i]>10){
+      print(vec1[i])
+}else
+    print('Menor que 10')
 }
-lapply(vec1, func)
+
+
 # Exercício 4 - Conisdere a lista abaixo. Crie um loop que imprima no console cada elemento da lista
 lst2 <- list(2, 3, 5, 7, 11, 13)
 lst2
+for (i in 1:length(lst2)){
+  print(lst2[i])
+}
+
 
 # Exercício 5 - Considere as duas matrizes abaixo. 
 # Faça uma multiplicação element-wise e multiplicação normal entre as materizes
@@ -42,6 +50,7 @@ mat2 <- t(mat1)
 mat2
 
 # Multiplicação element-wise
+mat1*mat2
 
 # Multiplicação de matrizes
 
