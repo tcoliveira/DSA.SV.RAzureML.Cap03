@@ -54,22 +54,44 @@ mat1*mat2
 
 # Multiplicação de matrizes
 
+mat1 %*% mat2
+
 # Exercício 6 - Crie um vetor, matriz, lista e dataframe e faça a nomeação de cada um dos objetos
+vec<-c(1:5)
+vec
+mat<-matrix(c(1:10), ncol = 5)
+mat
+lst2<-list(1:5)
+lst2
+df<data.frame(c(as.list(vec),mat,lst2))
+#Incompleto, rever no video
 
 # Exercício 7 - Considere a matriz abaixo. Atribua valores NA de forma aletória para 50 elementos da matriz
 # Dica: use a função sample()
 mat2 <- matrix(1:90, 10)
 mat2
+?sample
+sample(mat2, 50, replace = FALSE)
 
 # Exercício 8 - Para a matriz abaixo, calcule a soma por linha e por coluna
 mat1 <- matrix(c(1:50), nrow = 5, ncol = 5, byrow = T)
 mat1
+?apply
 
+linha<-apply(mat1,1,sum)
+coluna<-apply(mat1,2,sum)
+linha
+coluna
 # Exercício 9 - Para o vetor abaixo, ordene os valores em ordem crescente
 a <- c(100, 10, 10000, 1000)
 a
-
+sort(a, decreasing = FALSE)
 # # Exercício 10 - Imprima no console todos os elementos da matriz abaixo que forem maiores que 15
 mat1 <- matrix(c(1:50), nrow = 5, ncol = 5, byrow = T)
 mat1
 
+for (i in 1:length(mat1)){
+  if (mat1[i]>15){
+    print(mat1[i])
+  }
+}
