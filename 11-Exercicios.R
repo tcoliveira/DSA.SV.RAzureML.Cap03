@@ -58,8 +58,10 @@ mat1 %*% mat2
 
 # Exercício 6 - Crie um vetor, matriz, lista e dataframe e faça a nomeação de cada um dos objetos
 vec<-c(1:5)
+names(vec)<-c('c1','c2','c3','c4','c5')
 vec
-mat<-matrix(c(1:10), ncol = 5)
+mat<-matrix(c(1:50), nr=5, ncol = 5, byrow = T)
+dimnames(mat)<-(list(c('ob1','ob2','ob3','ob4','ob5'), c('vr1','vr2',"vr3",'vr5')))
 mat
 lst2<-list(1:5)
 lst2
@@ -72,7 +74,8 @@ mat2 <- matrix(1:90, 10)
 mat2
 ?sample
 sample(mat2, 50, replace = FALSE)
-
+mat2[sample(1:50, 10)] = NA
+mat2
 # Exercício 8 - Para a matriz abaixo, calcule a soma por linha e por coluna
 mat1 <- matrix(c(1:50), nrow = 5, ncol = 5, byrow = T)
 mat1
@@ -85,6 +88,7 @@ coluna
 # Exercício 9 - Para o vetor abaixo, ordene os valores em ordem crescente
 a <- c(100, 10, 10000, 1000)
 a
+a[order(a)]
 sort(a, decreasing = FALSE)
 # # Exercício 10 - Imprima no console todos os elementos da matriz abaixo que forem maiores que 15
 mat1 <- matrix(c(1:50), nrow = 5, ncol = 5, byrow = T)
